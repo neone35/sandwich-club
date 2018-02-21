@@ -1,116 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.udacity.sandwichclub.DetailActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/image_iv"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="199dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <TextView
-        android:id="@+id/tv_origin"
-        style="@style/DetailText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_place_of_origin_label"
-        app:layout_constraintTop_toTopOf="@+id/tv_place_of_origin_label"
-        tools:text="Antarctica" />
+        <ImageView
+            android:id="@+id/image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="199dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sandwich_picture_content_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_name" />
 
-    <TextView
-        android:id="@+id/tv_known_as_label"
-        style="@style/DetailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_label" />
+        <TextView
+            android:id="@+id/tv_origin"
+            style="@style/DetailText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_place_of_origin_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_place_of_origin_label"
+            tools:text="Antarctica" />
 
-    <TextView
-        android:id="@+id/tv_ingredients_label"
-        style="@style/DetailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/detail_ingredients_label"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description_label" />
+        <TextView
+            android:id="@+id/tv_known_as_label"
+            style="@style/DetailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/detail_also_known_as_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_label" />
 
-    <TextView
-        android:id="@+id/tv_place_of_origin_label"
-        style="@style/DetailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+        <TextView
+            android:id="@+id/tv_ingredients_label"
+            style="@style/DetailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/detail_ingredients_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description_label" />
 
-    <TextView
-        android:id="@+id/tv_description"
-        style="@style/DetailText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
-        app:layout_constraintEnd_toEndOf="@+id/tv_origin"
-        app:layout_constraintStart_toStartOf="@+id/tv_origin"
-        app:layout_constraintTop_toTopOf="@+id/tv_description_label"
-        tools:text="It's a very healthy piece of food and it's very tasty. Also it means something to you. It has vitamins such as X and Y." />
+        <TextView
+            android:id="@+id/tv_place_of_origin_label"
+            style="@style/DetailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_place_of_origin_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_iv" />
 
-    <TextView
-        android:id="@+id/tv_also_known_as"
-        style="@style/DetailText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/tv_origin"
-        app:layout_constraintStart_toStartOf="@+id/tv_origin"
-        app:layout_constraintTop_toTopOf="@+id/tv_known_as_label"
-        tools:text="Mumba Bumba" />
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/DetailText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
+            app:layout_constraintEnd_toEndOf="@+id/tv_origin"
+            app:layout_constraintStart_toStartOf="@+id/tv_origin"
+            app:layout_constraintTop_toTopOf="@+id/tv_description_label"
+            tools:text="It's a very healthy piece of food and it's very tasty. Also it means something to you. It has vitamins such as X and Y." />
 
-    <TextView
-        android:id="@+id/tv_ingredients"
-        style="@style/DetailText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_also_known_as"
-        app:layout_constraintEnd_toEndOf="@+id/tv_origin"
-        app:layout_constraintStart_toStartOf="@+id/tv_origin"
-        app:layout_constraintTop_toTopOf="@+id/tv_ingredients_label"
-        tools:text="Ketchup, Carrot, Ice" />
+        <TextView
+            android:id="@+id/tv_also_known_as"
+            style="@style/DetailText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/tv_origin"
+            app:layout_constraintStart_toStartOf="@+id/tv_origin"
+            app:layout_constraintTop_toTopOf="@+id/tv_known_as_label"
+            tools:text="Mumba Bumba" />
 
-    <TextView
-        android:id="@+id/tv_description_label"
-        style="@style/DetailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/detail_description_label"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
-        app:layout_constraintTop_toBottomOf="@+id/tv_place_of_origin_label" />
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_ingredients"
+            style="@style/DetailText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_also_known_as"
+            app:layout_constraintEnd_toEndOf="@+id/tv_origin"
+            app:layout_constraintStart_toStartOf="@+id/tv_origin"
+            app:layout_constraintTop_toTopOf="@+id/tv_ingredients_label"
+            tools:text="Ketchup, Carrot, Ice" />
 
+        <TextView
+            android:id="@+id/tv_description_label"
+            style="@style/DetailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/detail_description_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_place_of_origin_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_place_of_origin_label" />
+
+        <TextView
+            android:id="@+id/tv_main_name"
+            style="@style/MainName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Chivito" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
