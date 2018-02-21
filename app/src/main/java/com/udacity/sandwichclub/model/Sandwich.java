@@ -36,9 +36,7 @@ public class Sandwich {
     }
 
     public List<String> getAlsoKnownAs() {
-        if (!alsoKnownAs.isEmpty())
             return alsoKnownAs;
-        return noDataList();
     }
 
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
@@ -46,9 +44,7 @@ public class Sandwich {
     }
 
     public String getPlaceOfOrigin() {
-        if (!placeOfOrigin.isEmpty())
-            return placeOfOrigin;
-        return "unknown";
+        return placeOfOrigin;
     }
 
     public void setPlaceOfOrigin(String placeOfOrigin) {
@@ -72,18 +68,10 @@ public class Sandwich {
     }
 
     public List<String> getIngredients() {
-        if (!ingredients.isEmpty())
-            return ingredients;
-        return noDataList();
+        return ingredients;
     }
 
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public List<String> noDataList() {
-        List<String> noDataStringList = new ArrayList<>();
-        noDataStringList.add("unknown");
-        return noDataStringList;
     }
 }

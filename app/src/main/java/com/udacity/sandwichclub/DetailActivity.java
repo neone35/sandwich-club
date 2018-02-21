@@ -32,7 +32,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
 
         Intent intent = getIntent();
@@ -66,7 +66,6 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         populateUI(sandwich);
-        grayIfEmpty();
     }
 
     private void closeOnError() {
@@ -79,21 +78,31 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(mBinding.imageIv);
-        mBinding.tvOrigin.setText(sandwich.getPlaceOfOrigin());
+
+        checkIfEmptyString(mBinding.tvOrigin, sandwich.getPlaceOfOrigin());
         mBinding.tvDescription.setText(sandwich.getDescription());
-        mBinding.tvIngredients.setText(TextUtils.join(", ", sandwich.getIngredients()));
-        mBinding.tvAlsoKnownAs.setText(TextUtils.join(", ", sandwich.getAlsoKnownAs()));
+        checkIfEmptyList(mBinding.tvIngredients, sandwich.getIngredients());
+        checkIfEmptyList(mBinding.tvAlsoKnownAs, sandwich.getAlsoKnownAs());
+
+
     }
 
-    private void grayIfEmpty() {
-        if (mBinding.tvOrigin.getText().equals("unknown")) {
-            mBinding.tvOrigin.setTextColor(getResources().getColor(R.color.colorGray));
+    private void checkIfEmptyString(TextView textView, String modelString) {
+        if (!modelString.isEmpty()) {
+            textView.setText(modelString);
+            return;
         }
-        if (mBinding.tvIngredients.getText().equals("unknown")) {
-            mBinding.tvIngredients.setTextColor(getResources().getColor(R.color.colorGray));
-        }
-        if (mBinding.tvAlsoKnownAs.getText().equals("unknown")) {
-            mBinding.tvAlsoKnownAs.setTextColor(getResources().getColor(R.color.colorGray));
-        }
+        textView.setText(getResources().getText(R.string.unknown));
+        textView.setTextColor(getResources().getColor(R.color.colorGray));
+    }
+
+    private void checkIfEmptyList(TextView textView, List<String> modelListString) {
+        if (modelListString != null)
+            if (!modelListString.isEmpty()) {
+                textView.setText(TextUtils.join(", ", modelListString));
+                return;
+            }
+        textView.setText(getResources().getText(R.string.unknown));
+        textView.setTextColor(getResources().getColor(R.color.colorGray));
     }
 }
