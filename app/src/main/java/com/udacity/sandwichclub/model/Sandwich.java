@@ -1,5 +1,6 @@
 package com.udacity.sandwichclub.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich {
@@ -35,7 +36,9 @@ public class Sandwich {
     }
 
     public List<String> getAlsoKnownAs() {
-        return alsoKnownAs;
+        if (!alsoKnownAs.isEmpty())
+            return alsoKnownAs;
+        return noDataList();
     }
 
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
@@ -43,7 +46,9 @@ public class Sandwich {
     }
 
     public String getPlaceOfOrigin() {
-        return placeOfOrigin;
+        if (!placeOfOrigin.isEmpty())
+            return placeOfOrigin;
+        return "unknown";
     }
 
     public void setPlaceOfOrigin(String placeOfOrigin) {
@@ -67,10 +72,18 @@ public class Sandwich {
     }
 
     public List<String> getIngredients() {
-        return ingredients;
+        if (!ingredients.isEmpty())
+            return ingredients;
+        return noDataList();
     }
 
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public List<String> noDataList() {
+        List<String> noDataStringList = new ArrayList<>();
+        noDataStringList.add("unknown");
+        return noDataStringList;
     }
 }

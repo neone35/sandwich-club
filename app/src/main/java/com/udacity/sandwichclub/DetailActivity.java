@@ -19,6 +19,7 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         populateUI(sandwich);
+        grayIfEmpty();
     }
 
     private void closeOnError() {
@@ -81,5 +83,17 @@ public class DetailActivity extends AppCompatActivity {
         mBinding.tvDescription.setText(sandwich.getDescription());
         mBinding.tvIngredients.setText(TextUtils.join(", ", sandwich.getIngredients()));
         mBinding.tvAlsoKnownAs.setText(TextUtils.join(", ", sandwich.getAlsoKnownAs()));
+    }
+
+    private void grayIfEmpty() {
+        if (mBinding.tvOrigin.getText().equals("unknown")) {
+            mBinding.tvOrigin.setTextColor(getResources().getColor(R.color.colorGray));
+        }
+        if (mBinding.tvIngredients.getText().equals("unknown")) {
+            mBinding.tvIngredients.setTextColor(getResources().getColor(R.color.colorGray));
+        }
+        if (mBinding.tvAlsoKnownAs.getText().equals("unknown")) {
+            mBinding.tvAlsoKnownAs.setTextColor(getResources().getColor(R.color.colorGray));
+        }
     }
 }

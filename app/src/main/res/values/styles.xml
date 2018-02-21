@@ -9,7 +9,7 @@
     </style>
 
     <style name="MainName" parent="DetailLabel">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
     <style name="DetailLabel" parent="TextAppearance.AppCompat.Title">
