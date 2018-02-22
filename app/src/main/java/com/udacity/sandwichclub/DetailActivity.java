@@ -77,6 +77,8 @@ public class DetailActivity extends AppCompatActivity {
         mBinding.tvMainName.setText(sandwich.getMainName());
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.drawable.user_placeholder)
+                .error(R.drawable.user_placeholder_error)
                 .into(mBinding.imageIv);
 
         checkIfEmptyString(mBinding.tvOrigin, sandwich.getPlaceOfOrigin());

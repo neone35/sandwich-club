@@ -7,7 +7,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="10dp">
+        android:paddingBottom="@dimen/detail_scroll_paddingBottom">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -17,10 +17,12 @@
             <ImageView
                 android:id="@+id/image_iv"
                 android:layout_width="match_parent"
-                android:layout_height="199dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="@dimen/iv_sandwich_height"
+                android:layout_marginEnd="@dimen/iv_sandwich_marginEnd"
+                android:layout_marginLeft="@dimen/iv_sandwich_marginStart"
+                android:layout_marginRight="@dimen/iv_sandwich_marginEnd"
+                android:layout_marginStart="@dimen/iv_sandwich_marginStart"
+                android:layout_marginTop="@dimen/iv_sandwich_marginTop"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
                 android:scaleType="centerCrop"
@@ -31,7 +33,7 @@
             <TextView
                 android:id="@+id/tv_origin"
                 style="@style/DetailText"
-                android:layout_width="200dp"
+                android:layout_width="@dimen/tv_info_width"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_ingredients"
@@ -71,7 +73,7 @@
             <TextView
                 android:id="@+id/tv_description"
                 style="@style/DetailText"
-                android:layout_width="200dp"
+                android:layout_width="@dimen/tv_info_width"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_also_known_as"
@@ -81,7 +83,7 @@
             <TextView
                 android:id="@+id/tv_also_known_as"
                 style="@style/DetailText"
-                android:layout_width="200dp"
+                android:layout_width="@dimen/tv_info_width"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_origin"
@@ -91,7 +93,7 @@
             <TextView
                 android:id="@+id/tv_ingredients"
                 style="@style/DetailText"
-                android:layout_width="200dp"
+                android:layout_width="@dimen/tv_info_width"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
