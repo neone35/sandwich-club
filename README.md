@@ -11,8 +11,8 @@ done using libraries, writing the JSON parsing for this project will
 help you to better understand how it is processed.
 
 ## Screenshots
-![alt text](https://thumb.ibb.co/mz5C8H/Screenshot_1519322362.png "Sandwich club main activity")
-![alt text](https://thumb.ibb.co/cWbxax/Screenshot_1519322396.png "Sandwich club details activity")
+[![Sandwich club main activity](https://thumb.ibb.co/cWbxax/Screenshot_1519322396.png)](https://ibb.co/cWbxax)
+[![Sandwich club details activity](https://thumb.ibb.co/mz5C8H/Screenshot_1519322362.png)](https://ibb.co/mz5C8H)
 
 ## What Did I Learn?
 - JSON parsing to a model object
